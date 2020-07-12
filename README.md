@@ -3,7 +3,7 @@
 
 ##### IDE : IntelliJ
 ##### Language : Javascript
-##### Library : React, Axios
+##### Library : React, Axios, React-Router
 
 * 1일차 ( **07. 09. Thu** ) - 04-3
     * 프로젝트 생성 및 설정
@@ -34,6 +34,7 @@
     * props validation
         * npm install prop-types 설치
         * props의 자료형(string, number...)과 필수여부(isRequired)를 정의
+        * props의 자료형을 array의 세부 원소까지 정의 가능 [ arrayOf(PropTypes.string) ]
         
     * state
         * 동적 데이터를 다룰때 사용
@@ -77,5 +78,38 @@
         * async 함수 안에서는 await를 사용할 수 있다 
         * await 키워드를 사용하면 프라미스가 처리될 때까지 대기
         * 함께 사용 시 읽고, 쓰기 쉬운 비동기 코드를 작성할 수 있다
-
+        
+* 3일차 ( **07. 12. Sun** ) - 완료
+    * React의 경우 class 속성을 className으로 바꾸어야 하며, 이는 JSX를 HTML로 변환하면서 className을 class로 다시 변환해 주기 때문이다
+    
+    * React-Router
+        * URL에 따른 페이지 이동을 위해서 필요한 Library
+        * npm install react-router-dom 설치
+        * /home/introduction
+            * / , /home, /home/introduction 3가지 모든 URL을 찾기 떄문에 exact 속성을 사용하여 정확하게 일치하는 URL에만 반응하도록 한다
+        
+        * HashRouter
+            * 서버에 요청을 보내지 않고, URL의 해시 부분을 사용하여 UI가 URL과 동기화 되도록하는 라우터
+            * 위치를 지원하지 않으며, 레거시 브라우저를 지원하기 위한 것이므로 BrowserRouter와 혼용하여 사용필요
+        
+        * Route Component
+            * 어떤 규칙을 가진 경로에 어떤 컴포넌트를 보여 줄지 정의 가능
+        
+        * a tag 대체로 Link Component
+            * href 속성은 페이지 전체를 그려줌
+            * 필요한 부분만을 그려주는 리액트의 장점과는 맞지 않음
+            * react-route의 Link Component의 to 속성로 대체
+            
+        * route props
+            * 라우팅 대상이 되는 컴포넌트에 넘겨주는 기본 porps
+            * 리다이렉트 기능 구현 가능
+    
+        * git-hub에 배포
+            * package.json 에 키와 키값 추가
+                * "homepage": "https://timesgold.github.io/movie_app_2020" 추가
+                * "predeploy": "npm run build" ( scripts 에 추가 )
+                * "deploy": "gh-pages -d build" ( scripts 에 추가 )
+            * npm install gh-pages 설치
+            * npm run deploy 배포 
+            
 ***React JS Fundamentals Course 2020***
